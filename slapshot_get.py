@@ -29,13 +29,13 @@ def main(argv):
         sys.exit(1)
             
 def thread_launch():
-    url = "http://" + TARGET_URL + ":" + TARGET_PORT
+    url = TARGET_URL + ":" + TARGET_PORT
     try:
         count = 0
         headers = {'User-Agent': USER_AGENT_PAYLOAD}
         while int(NUM_INTERATIONS) > count:
             sesh.get(url, headers=headers)
-            sleep(int(SLEEP_TIMER))
+            sleep(float(SLEEP_TIMER))
             count = count + 1
         print("completed thread")
     except KeyboardInterrupt:
